@@ -63,11 +63,34 @@ def insertion_sort(a):
     return a
 
 
+def counting_kol(li, lenght, maximum):
+    ans = [0] * maximum
+    for i in range(lenght):
+        ans[li[i]] += 1
+    return ans
+
+
+def counting_sort(a):
+    m = max(a) + 1
+    n = len(a)
+    kol = counting_kol(a, n, m)
+    j = 0
+    for i in range(m):
+        index = kol[i]
+        while index != 0:
+            a[j] = i
+            index -= 1
+            j += 1
+    return a
+
+
 l = [9, 7, 5, 11, 12, 2, 14, 3, 10, 6]
 print(quicksort(l, 0, 9))
 l = [6, 5, 4, 1, 8, 2, 4, 3]
 print(merge_sort(l))
 l = [1, 2, 3, 6, 7, 8, 4, 5, 4]
 print(selection_sort(l, 9))
-l = [7,10,2,8,3]
+l = [7, 10, 2, 8, 3]
 print(insertion_sort(l))
+l = [4, 3, 0, 2, 3, 1, 4, 2]
+print(counting_sort(l))

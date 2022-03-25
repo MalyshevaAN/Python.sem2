@@ -52,6 +52,7 @@ class Rational:
         self.numerator = self.numerator * other.denominator + other.numerator * self.denominator
         self.denominator = self.denominator * other.denominator
         self.gcd()
+        return self
 
     def __sub__(self, other):
         x = self.numerator * other.denominator - other.numerator * self.denominator
@@ -64,6 +65,7 @@ class Rational:
         self.numerator = self.numerator * other.denominator - other.numerator * self.denominator
         self.denominator = self.denominator * other.denominator
         self.gcd()
+        return self
 
     def __mul__(self, other):
         x = self.numerator * other.numerator
@@ -76,6 +78,7 @@ class Rational:
         self.numerator = self.numerator * other.numerator
         self.denominator = self.denominator * other.denominator
         self.gcd()
+        return self
 
     def __truediv__(self, other):
         x = self.numerator * other.denominator
@@ -88,6 +91,7 @@ class Rational:
         self.numerator = self.numerator * other.denominator
         self.denominator = self.denominator * other.numerator
         self.gcd()
+        return self
 
     def __pow__(self, p):
         x = 1
@@ -106,6 +110,7 @@ class Rational:
         for i in range(p - 1):
             self.numerator *= x
             self.denominator *= y
+        return self
 
     def __eq__(self, other):
         return isinstance(other, Rational) and self.numerator * other.denominator == other.numerator * self.denominator
@@ -137,7 +142,7 @@ number3 = number1.__add__(number2)
 number4 = number1 - number2
 print(number3.__str__())
 print(number4.__str__())
-number1.__iadd__(number2)
+number1 += number2
 print(number1)
 number5 = number1 ** 3
 print(number5.__str__())
@@ -147,5 +152,5 @@ r1 = Rational(1, 3)
 r2 = Rational(3, 8)
 print(r1.__ne__(r2))
 print(summory(3))
-print(Rational.statics())
+
 

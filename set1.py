@@ -27,10 +27,11 @@ def wrong_words(dictionary, text):
             ans.append(elem)
     return ans
 
+if __name__ == "__main__":
 
-a = set_of_correct_words()
-b = list_of_words()
-print(' '.join(map(str, wrong_words(a, b))))
-print(b)
-with open('wrong_words.txt', mode='w', encoding='utf-8') as m:
-    print(' '.join(map(str, wrong_words(a, b))), file=m)
+    a = set_of_correct_words()
+    b = list_of_words()
+    print(' '.join(map(str, wrong_words(a, b))))
+    print(b)
+    with open('wrong_words.txt', mode='w', encoding='utf-8') as m:
+        print(' '.join(map(str, wrong_words(a, b))), file=m)

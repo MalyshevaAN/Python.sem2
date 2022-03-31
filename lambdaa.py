@@ -8,14 +8,10 @@ def funct(x):
 
 
 def eat(*a):
-    flag = True
     for elem in a:
         if type(elem) is int and elem % 2 == 0:
-            flag = False
-            print('ok')
-            break
-    if not flag:
-        print('I like evens')
+            return 'ok'
+    return ('I like evens')
 
 
 
@@ -27,14 +23,15 @@ def repeat(**a):
     return ans
 
 
-function1 = lambda x: x ** 2
-graph(function1, 10, 20)
-print()
-graph(funct)
+if __name__ == '__main__':
+    function1 = lambda x: x ** 2
+    graph(function1, 10, 20)
+    print()
+    graph(funct)
 
 
-eat(11, 33, 55, 10, 77, 99)
-eat(11, 33, 55, 77, 99,'12')
+    print(eat(11, 33, 55, 10, 77, 99))
+    print(eat(11, 33, 55, 77, 99, '12'))
 
 
-print(repeat(hello = 2, I = 3, am = 2, Nastia = 4))
+    print(repeat(hello = 2, I = 3, am = 2, Nastia = 4))

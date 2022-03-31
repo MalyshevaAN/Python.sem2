@@ -42,11 +42,12 @@ def set_of_common_words_2(s1, s2):
             ans.append(elem)
     return ans
 
+if __name__ == "__main__":
 
-with open('text.txt', mode='r', encoding='utf-8') as f:
-    str1= f.read()
-    print(set_of_string(str1))
-    print(new_string(str1, {'я'}))
-    print(list_of_words(str1))
-    print(set_of_common_words(str1, 'я на солнышке лежу'))
-    print(set_of_common_words_2(str1, 'я на солнышке лежу'))
+    with open('text.txt', mode='r', encoding='utf-8') as f:
+        str1= f.read()
+        print(set_of_string(str1))
+        print(new_string(str1, {'я'}))
+        print(list_of_words(str1))
+        print(set_of_common_words(str1, 'я на солнышке лежу'))
+        print(set_of_common_words_2(str1, 'я на солнышке лежу'))

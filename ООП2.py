@@ -68,8 +68,11 @@ class Drawing:
                     self.setPoint(j, i, '.')
 
 
-picture = Drawing(20, 20, "*")
-picture.print()
-print()
-picture.draw_circle(7, 7, 5)
-picture.print()
+print('имя модуля, где происодит выполнение функции:', __name__)
+if __name__ =="__main__":
+
+    picture = Drawing(20, 20, "*")
+    picture.print()
+    print()
+    picture.draw_circle(7, 7, 5)
+    picture.print()

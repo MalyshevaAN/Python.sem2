@@ -22,7 +22,7 @@ def email_regex(s):
 
 def phone1(s):
     ans = []
-    phone_number = re.compile(r'(\+?\d(|\s|\(|\)|-|){0,4}){7,10}')
+    phone_number = re.compile(r'(\+?\d+(|\s|\(|\)|-|){0,4}){7,10}')
     for m in re.finditer(phone_number, s):
         ans.append(m.group())
     return ans
@@ -56,6 +56,7 @@ def change_plus_1(s):
         k = int(m) + 1
         s = s.replace(m, str(k))
     return s
+
 
 
 print(email('_12 - anaste44s @ mail.com'))

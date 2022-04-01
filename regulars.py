@@ -46,8 +46,6 @@ def tab(s):
 def reverse(s):
     special_words = re.compile(r'([a-zA-Z]+)-([a-zA-Z]+)')
     for m in re.finditer(special_words, s):
-        m1 = m.group(1) + '-'
-        m2 = m.group(2)
         s = s.replace(m.group(2), m.group(1))
         s = s.replace(m.group(1), m.group(2), 1)
     return (s)

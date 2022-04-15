@@ -39,7 +39,6 @@ def class_of_animal(link, animal):
 
 def link_from_wikipedia(link, s,names):
     l = link
-    print(l)
     if len(s) == 100 or l in s:
         return l
     else:
@@ -48,11 +47,9 @@ def link_from_wikipedia(link, s,names):
         document = BeautifulSoup(response, features='html.parser')
         div = document.find('div', {'class': 'mw-parser-output'})
         if not div:
-            print(1)
             return l
         p = div.find('p', recursive=False)
         if not p:
-            print(2)
             return l
         flag = 1
         for child in p.children:
@@ -66,7 +63,6 @@ def link_from_wikipedia(link, s,names):
                 names.append(str(child.get('title')))
                 link_from_wikipedia(new, s, names)
                 break
-        print(3)
         return s[-1]
 
 

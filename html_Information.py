@@ -67,7 +67,7 @@ def link_from_wikipedia(link, s,names):
                 link_from_wikipedia(new, s, names)
                 break
         print(3)
-        return l
+        return s[-1]
 
 
 

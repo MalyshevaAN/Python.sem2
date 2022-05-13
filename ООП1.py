@@ -45,7 +45,7 @@ class Time:
 
     def addition(self, min):
         b = (self.minutes + min) // 60
-        self.hours = (self.hours + b)
+        self.hours = (self.hours + b)%24
         self.minutes = (self.minutes + min) % 60
 
 
@@ -56,5 +56,5 @@ print(t1.isday())
 print(t1.isevening())
 print(t1.isnight())
 print(t1.sayhello())
-t1.addition(120)
+t1.addition(1200)
 t1.show()

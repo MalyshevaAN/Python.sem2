@@ -2,10 +2,11 @@ import re
 
 
 def email(s):
-    em = re.compile(r'([a-z]|\d|_|-|)*@[a-z]+\.[a-z]{2,}')
-    m = re.fullmatch(em, s)
+    em = re.compile(r'[a-z\d_-]*@[a-z\d_-]+\.[a-z]{2,}')
+    m = re.findall(em, s)
+    print(m)
     if m:
-        return 'It is correct email'
+        return m
     else:
         return 'email is not correct'
 
@@ -13,9 +14,9 @@ def email(s):
 def email_regex(s):
     em2 = re.compile(
         r'(?:[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])')
-    m2 = re.fullmatch(em2, s)
+    m2 = re.findall(em2, s)
     if m2:
-        return 'It is correct email'
+        return 'm2'
     else:
         return 'email is not correct'
 
@@ -57,11 +58,14 @@ def change_plus_1(s):
         s = s.replace(m, str(k))
     return s
 
+def kittens(s):
+    regular = re.compile(r'\bкот\b', flags = re.IGNORECASE)
+    return len(re.findall(regular, s))
 
-
-print(email('_12 - anaste44s @ mail.com'))
+print(email('my new emeil is anastasiamalysheva@yyuui.com my old email is 12-_ansuei@iuiuo.rue'))
 print(phone1('my number is +4913 - (206) - 90, my second number is 94(128)130'))
 print(phone2('my number is +4913 - (206) - 90, my second number is 94(128)130'))
 print(tab('Это строка , у которой зачем-то написаны два пробела перед запятой'))
 print(reverse('Kind-of green-blue grass'))
 print(change_plus_1('У меня 2 яблока и -4 банана'))
+print(kittens('кот который кота котами КОт Кот '))
